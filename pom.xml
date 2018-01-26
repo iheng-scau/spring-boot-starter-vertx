@@ -6,7 +6,10 @@
 	<groupId>org.iheng</groupId>
 	<artifactId>spring-boot-vertx-mysql-postgresql-starter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>spring-boot-vertx-mysql-starter</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>spring-boot-vertx-mysql-postgresql-starter</name>
 	<description>Demo project for Spring Boot</description>
@@ -35,6 +38,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-mysql-postgresql-client</artifactId>
+			<version>3.5.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
