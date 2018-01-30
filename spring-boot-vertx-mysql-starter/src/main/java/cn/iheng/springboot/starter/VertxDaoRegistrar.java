@@ -35,15 +35,16 @@ public class VertxDaoRegistrar implements BeanFactoryAware, ImportBeanDefinition
     private ResourceLoader resourceLoader;
     private ClassLoader classLoader;
     private Environment environment;
+    private BeanFactory beanFactory;
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-
+        this.beanFactory = beanFactory;
     }
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
-        this.resourceLoader=resourceLoader;
+        this.resourceLoader = resourceLoader;
     }
 
     @Override
@@ -59,24 +60,25 @@ public class VertxDaoRegistrar implements BeanFactoryAware, ImportBeanDefinition
             for (BeanDefinition candidateComponent : candidateComponents) {
                 if (candidateComponent instanceof AnnotatedBeanDefinition) {
                     AnnotatedBeanDefinition beanDefinition = (AnnotatedBeanDefinition) candidateComponent;
-                    AnnotationMetadata metadata=beanDefinition.getMetadata();
-                    Assert.isTrue(metadata.isInterface(),"@VertxDao can only be specified on an interface");
-                    Map<String,Object> attrs=metadata.getAnnotationAttributes(VertxDao.class.getCanonicalName());
-                    registerVertxDao(beanDefinitionRegistry,metadata,attrs);
+                    AnnotationMetadata metadata = beanDefinition.getMetadata();
+                    Assert.isTrue(metadata.isInterface(), "@VertxDao can only be specified on an interface");
+                    Map<String, Object> attrs = metadata.getAnnotationAttributes(VertxDao.class.getCanonicalName());
+                    registerVertxDao(beanDefinitionRegistry, metadata, attrs);
                 }
             }
         }
     }
 
-    private void registerVertxDao(BeanDefinitionRegistry registry,AnnotationMetadata annotationMetadata,Map<String,Object> attributes){
-        String className=annotationMetadata.getClassName();
-        BeanDefinitionBuilder definition=BeanDefinitionBuilder
+    private void registerVertxDao(BeanDefinitionRegistry registry, AnnotationMetadata annotationMetadata, Map<String, Object> attributes) {
+        String className = annotationMetadata.getClassName();
+        BeanDefinitionBuilder definition = BeanDefinitionBuilder
                 .genericBeanDefinition(VertxMySqlDaoFactoryBean.class);
+        definition.addPropertyValue("type", className);
         definition.setAutowireMode(AbstractBeanDefinition.AUTOWIRE_BY_TYPE);
-        AbstractBeanDefinition beanDefinition=definition.getBeanDefinition();
+        AbstractBeanDefinition beanDefinition = definition.getBeanDefinition();
         beanDefinition.setPrimary(true);
-        BeanDefinitionHolder holder=new BeanDefinitionHolder(beanDefinition,className);
-        BeanDefinitionReaderUtils.registerBeanDefinition(holder,registry);
+        BeanDefinitionHolder holder = new BeanDefinitionHolder(beanDefinition, className);
+        BeanDefinitionReaderUtils.registerBeanDefinition(holder, registry);
     }
 
     protected ClassPathScanningCandidateComponentProvider getScanner() {

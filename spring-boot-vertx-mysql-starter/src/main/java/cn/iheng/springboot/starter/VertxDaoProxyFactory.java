@@ -1,8 +1,12 @@
 package cn.iheng.springboot.starter;
 
-import sun.jvm.hotspot.oops.Instance;
+import io.vertx.ext.sql.SQLClient;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author iheng
@@ -10,16 +14,22 @@ import java.lang.reflect.Proxy;
  */
 public class VertxDaoProxyFactory<T> {
     private final Class<T> interfaceType;
+    private final Map<Method, VertxDaoMethod> methodMap = new ConcurrentHashMap<>();
 
-    public VertxDaoProxyFactory(Class<T> interfaceType){
-        this.interfaceType=interfaceType;
+    public VertxDaoProxyFactory(Class<T> interfaceType) {
+        this.interfaceType = interfaceType;
     }
 
-    public Class<T> getInterfaceType(){
+    public Class<T> getInterfaceType() {
         return this.interfaceType;
     }
 
-    public T newInstance(){
-        return Proxy.newProxyInstance(this.interfaceType.getClassLoader(), this.interfaceType.getInterfaces(),)
+    public T newInstance(SQLClient client) {
+        InvocationHandler handler = new VertxDaoInvocationHandler<>(client, interfaceType, methodMap);
+        return (T) Proxy.newProxyInstance(this.interfaceType.getClassLoader(), this.interfaceType.getInterfaces(), handler);
+    }
+
+    public T newInstance(InvocationHandler handler) {
+        return (T) Proxy.newProxyInstance(this.interfaceType.getClassLoader(), this.interfaceType.getInterfaces(), handler);
     }
 }

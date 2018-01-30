@@ -10,8 +10,9 @@ import org.springframework.context.annotation.Configuration;
  * @date 1/26/18
  */
 @Configuration
-@ConfigurationProperties("vertx.mysql")
-public class MySQLConfig {
+@ConfigurationProperties(VertxMySqlProperties.VERTX_MYSQL_PREFIX)
+public class VertxMySqlProperties {
+    public final static String VERTX_MYSQL_PREFIX="vertx.mysql";
     private String host;
     private int port;
     private String database;
