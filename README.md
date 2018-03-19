@@ -1,1 +1,1 @@
-# spring-boot-vertx-mysql-postgresql-starter
+# spring-boot-vertx-mysql-starter
