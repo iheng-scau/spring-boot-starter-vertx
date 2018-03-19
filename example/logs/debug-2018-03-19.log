@@ -1,0 +1,710 @@
+2018-03-19 11:14:54.596  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [cn.jpush.demo.DemoApplicationTests], using SpringBootContextLoader
+2018-03-19 11:14:54.655  INFO   --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [cn.jpush.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-03-19 11:14:54.668  INFO   --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cn.jpush.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-03-19 11:14:55.376  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cn.jpush.demo.DemoApplication for test class cn.jpush.demo.DemoApplicationTests
+2018-03-19 11:14:55.402  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-03-19 11:14:55.484  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2018-03-19 11:14:55.486  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2018-03-19 11:14:55.487  INFO   --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1f9e9475, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3aa078fd, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@d23e042, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46d59067, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2d0399f4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@14dd7b39, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@66ea810, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6cd24612, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5dafbe45, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2254127a]
+2018-03-19 11:14:58.080  INFO 1781 --- [           main] cn.jpush.demo.DemoApplicationTests       : Starting DemoApplicationTests on iheng-MacBook-Pro.local with PID 1781 (started by iheng in /Users/iheng/workspace/Projects/vertx-demo/demo)
+2018-03-19 11:14:58.081  INFO 1781 --- [           main] cn.jpush.demo.DemoApplicationTests       : No active profile set, falling back to default profiles: default
+2018-03-19 11:14:58.481  INFO 1781 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@36546a22: startup date [Mon Mar 19 11:14:58 CST 2018]; root of context hierarchy
+2018-03-19 11:15:17.101  INFO 1781 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'vertx' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=springboot.vertx.mysql.starter.autoconfig.VertxMySqlAutoConfiguration; factoryMethodName=vertx; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [springboot/vertx/mysql/starter/autoconfig/VertxMySqlAutoConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=springboot.vertx.starter.autoconfig.SpringBootVertxAutoConfiguration; factoryMethodName=vertx; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [springboot/vertx/starter/autoconfig/SpringBootVertxAutoConfiguration.class]]
+2018-03-19 11:15:19.893  INFO 1781 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'cn.jpush.demo.dao.DemoDao' of type [springboot.vertx.mysql.starter.VertxMySqlDaoFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-19 11:15:23.270  INFO 1781 --- [           main] i.v.ext.asyncsql.impl.MYSQLClientImpl    : Creating configuration for http://127.0.0.1:3306
+2018-03-19 11:15:24.784  INFO 1781 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@36546a22: startup date [Mon Mar 19 11:14:58 CST 2018]; root of context hierarchy
+2018-03-19 11:15:25.020  INFO 1781 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-19 11:15:25.022  INFO 1781 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-19 11:15:25.066  INFO 1781 --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Mapped URL path [/demo/hello] onto handler '/demo/hello'
+2018-03-19 11:15:25.066  INFO 1781 --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Mapped URL path [/exchange/imei2imsi] onto handler '/exchange/imei2imsi'
+2018-03-19 11:15:25.066  INFO 1781 --- [           main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Default mapping to handler '/*'
+2018-03-19 11:15:25.109  INFO 1781 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-19 11:15:25.109  INFO 1781 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-19 11:15:25.191  INFO 1781 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-19 11:15:25.935  INFO 1781 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-03-19 11:15:25.972  INFO 1781 --- [ntloop-thread-0] s.vertx.starter.VertxServerVerticle      : verticle starting...
+2018-03-19 11:15:25.982  INFO 1781 --- [ntloop-thread-1] s.vertx.starter.VertxServerVerticle      : verticle starting...
+2018-03-19 11:15:25.983  INFO 1781 --- [ntloop-thread-2] s.vertx.starter.VertxServerVerticle      : verticle starting...
+2018-03-19 11:15:25.984  INFO 1781 --- [ntloop-thread-3] s.vertx.starter.VertxServerVerticle      : verticle starting...
+2018-03-19 11:15:26.071  INFO 1781 --- [           main] cn.jpush.demo.DemoApplicationTests       : Started DemoApplicationTests in 29.855 seconds (JVM running for 36.147)
+2018-03-19 11:15:30.570  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 3948 ms, time limit is 2000
+2018-03-19 11:15:30.570  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 3949 ms, time limit is 2000
+2018-03-19 11:15:30.571  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 3948 ms, time limit is 2000
+2018-03-19 11:15:30.571  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 3959 ms, time limit is 2000
+2018-03-19 11:15:33.338  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 7133 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at sun.security.ec.CurveDB.add(CurveDB.java:154)
+	at sun.security.ec.CurveDB.<clinit>(CurveDB.java:171)
+	at sun.security.ec.SunECEntries.putEntries(SunECEntries.java:72)
+	at sun.security.ec.SunEC.<init>(SunEC.java:76)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.lang.Class.newInstance(Class.java:442)
+	at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:221)
+	at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:206)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.security.jca.ProviderConfig.doLoadProvider(ProviderConfig.java:206)
+	at sun.security.jca.ProviderConfig.getProvider(ProviderConfig.java:187)
+	at sun.security.jca.ProviderList.getProvider(ProviderList.java:233)
+	at sun.security.jca.ProviderList.getService(ProviderList.java:331)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:157)
+	at javax.net.ssl.SSLContext.getInstance(SSLContext.java:156)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:104)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:33.358  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 7134 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:33.381  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 7132 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:33.384  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 7144 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:34.451  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 8189 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at java.lang.Class.getModifiers(Native Method)
+	at sun.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:170)
+	at java.lang.reflect.Constructor.acquireConstructorAccessor(Constructor.java:460)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:420)
+	at java.lang.Class.newInstance(Class.java:442)
+	at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:221)
+	at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:206)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.security.jca.ProviderConfig.doLoadProvider(ProviderConfig.java:206)
+	at sun.security.jca.ProviderConfig.getProvider(ProviderConfig.java:187)
+	at sun.security.jca.ProviderList.getProvider(ProviderList.java:233)
+	at sun.security.jca.ProviderList.getService(ProviderList.java:331)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:157)
+	at javax.net.ssl.SSLContext.getInstance(SSLContext.java:156)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:104)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:34.455  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 8190 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:34.478  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 8189 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:34.499  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 8200 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:35.539  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 9554 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at sun.security.ssl.SSLAlgorithmConstraints.<clinit>(SSLAlgorithmConstraints.java:50)
+	at sun.security.ssl.ProtocolVersion.<clinit>(ProtocolVersion.java:114)
+	at sun.security.ssl.SSLContextImpl$AbstractSSLContext.<clinit>(SSLContextImpl.java:453)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at java.security.Provider$Service.getImplClass(Provider.java:1634)
+	at java.security.Provider$Service.newInstance(Provider.java:1592)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:236)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:164)
+	at javax.net.ssl.SSLContext.getInstance(SSLContext.java:156)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:104)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:35.543  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 9555 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:35.544  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 9553 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:35.544  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 9565 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:37.293  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 10971 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at java.security.Provider$Service.getImplClass(Provider.java:1634)
+	at java.security.Provider$Service.newInstance(Provider.java:1592)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:236)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:164)
+	at javax.net.ssl.TrustManagerFactory.getInstance(TrustManagerFactory.java:139)
+	at sun.security.ssl.SSLContextImpl.engineInit(SSLContextImpl.java:79)
+	at javax.net.ssl.SSLContext.init(SSLContext.java:282)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:105)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:37.296  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 10972 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:37.314  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 10970 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:37.413  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 10982 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:43.098  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 17110 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at sun.security.provider.JavaKeyStore$DualFormatJKS.<init>(JavaKeyStore.java:72)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at java.security.Provider$Service.newInstance(Provider.java:1595)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:236)
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:164)
+	at java.security.Security.getImpl(Security.java:695)
+	at java.security.KeyStore.getInstance(KeyStore.java:848)
+	at sun.security.ssl.TrustManagerFactoryImpl.getCacertsKeyStore(TrustManagerFactoryImpl.java:214)
+	at sun.security.ssl.TrustManagerFactoryImpl.engineInit(TrustManagerFactoryImpl.java:50)
+	at javax.net.ssl.TrustManagerFactory.init(TrustManagerFactory.java:250)
+	at sun.security.ssl.SSLContextImpl.engineInit(SSLContextImpl.java:81)
+	at javax.net.ssl.SSLContext.init(SSLContext.java:282)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:105)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:43.107  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 17111 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:43.111  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 17109 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:43.117  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 17121 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:44.099  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 18115 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at java.net.URL.getURLStreamHandler(URL.java:1175)
+	at java.net.URL.<init>(URL.java:599)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at javax.crypto.JceSecurity.<clinit>(JceSecurity.java:208)
+	at javax.crypto.JceSecurityManager.<clinit>(JceSecurityManager.java:65)
+	at javax.crypto.Cipher.getConfiguredPermission(Cipher.java:2587)
+	at javax.crypto.Cipher.getMaxAllowedKeyLength(Cipher.java:2611)
+	at sun.security.ssl.CipherSuite$BulkCipher.isAvailable(CipherSuite.java:548)
+	at sun.security.ssl.CipherSuite$BulkCipher.isAvailable(CipherSuite.java:527)
+	at sun.security.ssl.CipherSuite.isAvailable(CipherSuite.java:194)
+	at sun.security.ssl.SSLContextImpl.getApplicableCipherSuiteList(SSLContextImpl.java:346)
+	at sun.security.ssl.SSLContextImpl.getDefaultCipherSuiteList(SSLContextImpl.java:297)
+	at sun.security.ssl.SSLEngineImpl.init(SSLEngineImpl.java:402)
+	at sun.security.ssl.SSLEngineImpl.<init>(SSLEngineImpl.java:349)
+	at sun.security.ssl.SSLContextImpl.engineCreateSSLEngine(SSLContextImpl.java:201)
+	at javax.net.ssl.SSLContext.createSSLEngine(SSLContext.java:329)
+	at io.vertx.core.net.impl.SSLHelper.<clinit>(SSLHelper.java:106)
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:44.100  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 18116 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:44.100  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 18114 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:44.100  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 18126 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.<init>(HttpServerImpl.java:151)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:289)
+	at io.vertx.core.impl.VertxImpl.createHttpServer(VertxImpl.java:294)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:59)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:45.102  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-2,5,main] has been blocked for 19118 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:246)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:222)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:60)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:45.103  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-1,5,main] has been blocked for 19119 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:246)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:222)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:60)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:45.103  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-3,5,main] has been blocked for 19117 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at sun.nio.ch.DatagramChannelImpl.socket(DatagramChannelImpl.java:162)
+	at io.netty.channel.socket.nio.NioDatagramChannelConfig.<init>(NioDatagramChannelConfig.java:115)
+	at io.netty.channel.socket.nio.NioDatagramChannel.<init>(NioDatagramChannel.java:149)
+	at io.netty.channel.socket.nio.NioDatagramChannel.<init>(NioDatagramChannel.java:116)
+	at io.vertx.core.net.impl.transport.Transport.datagramChannel(Transport.java:134)
+	at io.vertx.core.impl.resolver.DnsResolverProvider$1.lambda$newResolver$0(DnsResolverProvider.java:136)
+	at io.vertx.core.impl.resolver.DnsResolverProvider$1$$Lambda$57/514723286.newChannel(Unknown Source)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:320)
+	at io.netty.bootstrap.AbstractBootstrap.register(AbstractBootstrap.java:234)
+	at io.netty.resolver.dns.DnsNameResolver.<init>(DnsNameResolver.java:297)
+	at io.netty.resolver.dns.DnsNameResolverBuilder.build(DnsNameResolverBuilder.java:361)
+	at io.vertx.core.impl.resolver.DnsResolverProvider$1$1.newNameResolver(DnsResolverProvider.java:183)
+	at io.netty.resolver.dns.DnsAddressResolverGroup.newResolver(DnsAddressResolverGroup.java:86)
+	at io.netty.resolver.dns.DnsAddressResolverGroup.newResolver(DnsAddressResolverGroup.java:73)
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:69)
+	at io.vertx.core.impl.resolver.DnsResolverProvider$1.newResolver(DnsResolverProvider.java:187)
+	at io.netty.resolver.AddressResolverGroup.getResolver(AddressResolverGroup.java:69)
+	at io.vertx.core.impl.AddressResolver.resolveHostname(AddressResolver.java:78)
+	at io.vertx.core.impl.VertxImpl.resolveAddress(VertxImpl.java:781)
+	at io.vertx.core.net.impl.AsyncResolveConnectHelper.doBind(AsyncResolveConnectHelper.java:82)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:340)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:222)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:60)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:45.103  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-0,5,main] has been blocked for 19129 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:246)
+	at io.vertx.core.http.impl.HttpServerImpl.listen(HttpServerImpl.java:222)
+	at springboot.vertx.starter.VertxServerVerticle.start(VertxServerVerticle.java:60)
+	at io.vertx.core.AbstractVerticle.start(AbstractVerticle.java:106)
+	at io.vertx.core.impl.DeploymentManager.lambda$doDeploy$8(DeploymentManager.java:483)
+	at io.vertx.core.impl.DeploymentManager$$Lambda$35/1403662281.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:15:45.194  INFO 1781 --- [ntloop-thread-0] s.v.s.a.SpringBootVertxAutoConfiguration : VertX server verticles deploy finished, instance: 4
+2018-03-19 11:15:45.209  INFO 1781 --- [ntloop-thread-0] s.v.s.a.SpringBootVertxAutoConfiguration : VertX started on port(s): 9000 (http)
+2018-03-19 11:18:48.121  WARN 1781 --- [-thread-checker] io.vertx.core.impl.BlockedThreadChecker  : Thread Thread[vert.x-eventloop-thread-6,5,main] has been blocked for 177995 ms, time limit is 2000
+
+io.vertx.core.VertxException: Thread blocked
+	at java.util.zip.ZipFile.read(Native Method)
+	at java.util.zip.ZipFile.access$1400(ZipFile.java:60)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:717)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(ZipFile.java:419)
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:158)
+	at sun.misc.Resource.getBytes(Resource.java:124)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:462)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at io.vertx.core.impl.FutureFactoryImpl.failedFuture(FutureFactoryImpl.java:43)
+	at io.vertx.core.Future.failedFuture(Future.java:83)
+	at io.vertx.ext.asyncsql.impl.ScalaUtils$3.apply(ScalaUtils.java:93)
+	at io.vertx.ext.asyncsql.impl.ScalaUtils$3.apply(ScalaUtils.java:87)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at io.vertx.ext.asyncsql.impl.VertxEventLoopExecutionContext.lambda$execute$0(VertxEventLoopExecutionContext.java:59)
+	at io.vertx.ext.asyncsql.impl.VertxEventLoopExecutionContext$$Lambda$69/1487543666.handle(Unknown Source)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:339)
+	at io.vertx.core.impl.ContextImpl$$Lambda$36/709931821.run(Unknown Source)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+2018-03-19 11:19:09.883  INFO 1781 --- [       Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@36546a22: startup date [Mon Mar 19 11:14:58 CST 2018]; root of context hierarchy
+2018-03-19 11:19:09.886  INFO 1781 --- [       Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
