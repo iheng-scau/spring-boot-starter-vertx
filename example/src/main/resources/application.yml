@@ -1,0 +1,10 @@
+server:
+  port: 8000
+
+vertx:
+  mysql:
+    host: http://127.0.0.1
+    port: 3306
+    database: local_test
+    username: iheng
+    password: iheng
