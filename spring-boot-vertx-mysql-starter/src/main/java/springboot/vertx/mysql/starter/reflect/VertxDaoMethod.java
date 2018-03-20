@@ -58,11 +58,16 @@ public class VertxDaoMethod<I,T>{
     public Future<Object> execute(SQLClient client, Object[] args){
         Future<Object> future=Future.future();
         client.getConnection(res->{
+            if(res.failed()){
+                log.error("get connection failed, cause:{}",res.cause().toString());
+                res.cause().printStackTrace();
+            }
             SQLConnection conn=res.result();
             JsonArray params=new JsonArray();
-            for(Object param : args){
-                params.add(param);
-            }
+            if (args!=null&&args.length>0)
+                for(Object param : args){
+                    params.add(param);
+                }
             /**
              * 根据指令类型进行执行
              */
@@ -75,6 +80,7 @@ public class VertxDaoMethod<I,T>{
                             future.tryFail(result.cause());
                         }
                     });
+                    break;
                 case DELETE:
                     conn.updateWithParams(this.sql,params, result->{
                         if(result.succeeded()){
@@ -83,14 +89,16 @@ public class VertxDaoMethod<I,T>{
                             future.tryFail(result.cause());
                         }
                     });
+                    break;
                 case SELECT:
                     conn.queryWithParams(sql, params, result->{
                         if (result.succeeded()){
                             future.tryComplete(result.result().getRows());
-                        }else{
+                        }else {
                             future.tryFail(result.cause());
                         }
                     });
+                    break;
                 case UPDATE:
                     conn.updateWithParams(this.sql,params, result->{
                         if(result.succeeded()){
@@ -99,6 +107,9 @@ public class VertxDaoMethod<I,T>{
                             future.tryFail(result.cause());
                         }
                     });
+                    break;
+                default:
+                    log.error("unknown operation type,type:{}", this.type);
             }
         });
         return future;

@@ -5,7 +5,6 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.asyncsql.MySQLClient;
 import io.vertx.ext.sql.SQLClient;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +22,6 @@ import springboot.vertx.mysql.starter.VertxMapperScannerRegistrar;
 @Import(VertxMapperScannerRegistrar.class)
 public class VertxMySqlAutoConfiguration {
     @Bean
-    @Qualifier("vertxMysqlClient")
     public SQLClient sqlClient(Vertx vertx, VertxMySqlProperties mysqlProperties) {
         JsonObject config = new JsonObject();
         config.put("host", mysqlProperties.getHost());
@@ -34,6 +32,7 @@ public class VertxMySqlAutoConfiguration {
         config.put("password", mysqlProperties.getPassword());
         config.put("maxPoolSize", mysqlProperties.getMaxPoolSize());
         config.put("queryTimeout", mysqlProperties.getQueryTimeout());
+
         SQLClient client = MySQLClient.createShared(vertx, config);
         return client;
     }

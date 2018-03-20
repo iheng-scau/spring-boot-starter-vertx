@@ -3,8 +3,8 @@ server:
 
 vertx:
   mysql:
-    host: http://127.0.0.1
+    host: localhost
     port: 3306
     database: local_test
-    username: iheng
+    username: root
     password: iheng

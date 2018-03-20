@@ -6,7 +6,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-The bean 'cn.jpush.demo.dao.DemoDao' could not be injected as a 'cn.jpush.demo.dao.DemoDao' because it is a JDK dynamic proxy that implements:
+The bean 'DemoDao' could not be injected as a 'DemoDao' because it is a JDK dynamic proxy that implements:
 
 
 Action:
@@ -41,7 +41,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
 	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
 	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name '/demo/hello': Unsatisfied dependency expressed through field 'demoDao'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'cn.jpush.demo.dao.DemoDao' is expected to be of type 'cn.jpush.demo.dao.DemoDao' but was actually of type 'com.sun.proxy.$Proxy63'
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name '/demo/hello': Unsatisfied dependency expressed through field 'demoDao'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'DemoDao' is expected to be of type 'DemoDao' but was actually of type 'com.sun.proxy.$Proxy63'
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
@@ -62,7 +62,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	... 24 common frames omitted
-Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'cn.jpush.demo.dao.DemoDao' is expected to be of type 'cn.jpush.demo.dao.DemoDao' but was actually of type 'com.sun.proxy.$Proxy63'
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'DemoDao' is expected to be of type 'DemoDao' but was actually of type 'com.sun.proxy.$Proxy63'
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:378)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)

@@ -11,6 +11,6 @@ public enum SqlCommandType {
     DELETE,
     SELECT,
     CALL,
-    FLUSH;
+    FLUSH
 }
 
