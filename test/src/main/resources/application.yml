@@ -1,0 +1,8 @@
+vertx:
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    database: local_test
+    charset: utf-8
+    username: root
+    password: iheng

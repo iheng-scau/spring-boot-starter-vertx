@@ -11,6 +11,7 @@ import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
@@ -23,7 +24,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
 import java.lang.annotation.Annotation;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -53,7 +54,7 @@ public class VertxDaoRegistrar implements BeanFactoryAware, ImportBeanDefinition
         scanner.setResourceLoader(this.resourceLoader);
         AnnotationTypeFilter annotationTypeFilter = new AnnotationTypeFilter(VertxDao.class);
         scanner.addIncludeFilter(annotationTypeFilter);
-        Set<String> basePackages = this.getBasePackages(annotationMetadata);
+        List<String> basePackages = this.getBasePackages();
 
         for (String basePackage : basePackages) {
             Set<BeanDefinition> candidateComponents = scanner.findCandidateComponents(basePackage);
@@ -107,13 +108,10 @@ public class VertxDaoRegistrar implements BeanFactoryAware, ImportBeanDefinition
     /**
      * 暂时默认类路径
      *
-     * @param metadata
      * @return
      */
-    protected Set<String> getBasePackages(AnnotationMetadata metadata) {
-        Set<String> basePackages = new HashSet<>();
-        basePackages.add(ClassUtils.getPackageName(metadata.getClassName()));
-        return basePackages;
+    protected List<String> getBasePackages() {
+        return AutoConfigurationPackages.get(this.beanFactory);
     }
 
     @Override

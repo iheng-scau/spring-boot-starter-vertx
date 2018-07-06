@@ -1,11 +1,13 @@
 package cn.iheng.springboot.starter;
 
+import cn.iheng.springboot.starter.exception.MethodResolveException;
+import cn.iheng.springboot.starter.utils.MethodResolveUtils;
+import io.vertx.core.Future;
 import io.vertx.ext.sql.SQLClient;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.Map;
 
 /**
@@ -39,10 +41,25 @@ public class VertxDaoInvocationHandler<T> implements InvocationHandler, Serializ
         return daoMethod.execute(client, args);
     }
 
-    private VertxDaoMethod cachedVertxDaoMethod(Method method) {
+    private VertxDaoMethod cachedVertxDaoMethod(Method method) throws MethodResolveException {
         if (methodMap.get(method) == null) {
-            methodMap.put(method, new VertxDaoMethod(this.interfaceType, method, method.getDeclaringClass()));
+            methodMap.put(method, new VertxDaoMethod(this.interfaceType, method, (Class<?>) resolve(method)));
         }
         return methodMap.get(method);
+    }
+
+    private Type resolve(Method method) throws MethodResolveException {
+        Class<?> returnType = method.getReturnType();
+        if (!returnType.isAssignableFrom(Future.class)) {
+            throw new MethodResolveException("method resolve error: method return type should be io.vertx.core.Future.");
+        } else {
+            Type type = method.getGenericReturnType();
+            if (type instanceof TypeVariable) {
+
+            } else if (type instanceof ParameterizedType) {
+                return MethodResolveUtils.resolveType(type);
+            }
+        }
+        return Object.class;
     }
 }
