@@ -7,6 +7,7 @@
 	<artifactId>spring-boot-vertx-mysql-postgresql-starter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
+		<module>spring-boot-vertx-web-starter</module>
 		<module>spring-boot-vertx-mysql-starter</module>
 		<module>test</module>
 	</modules>
