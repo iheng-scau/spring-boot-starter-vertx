@@ -1,5 +1,7 @@
 package springboot.vertx.starter.constant;
 
+import io.vertx.core.http.HttpMethod;
+
 /**
  * @author iheng
  * @date 3/8/18

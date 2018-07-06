@@ -19,13 +19,13 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>cn.jpush</groupId>
-			<artifactId>spring-boot-vertx-web-starter</artifactId>
+			<groupId>org.iheng</groupId>
+			<artifactId>spring-boot-vertx-mysql-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.iheng</groupId>
-			<artifactId>spring-boot-vertx-mysql-starter</artifactId>
+			<groupId>cn.jpush</groupId>
+			<artifactId>spring-boot-vertx-web-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
