@@ -1,4 +1,4 @@
-package cn.iheng.springboot.starter.utils;
+package cn.iheng.springboot.starter.reflect.utils;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

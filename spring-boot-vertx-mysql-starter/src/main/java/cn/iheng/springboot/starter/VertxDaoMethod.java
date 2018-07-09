@@ -3,7 +3,7 @@ package cn.iheng.springboot.starter;
 import cn.iheng.springboot.starter.annotation.*;
 import cn.iheng.springboot.starter.enums.SqlCommandType;
 import cn.iheng.springboot.starter.exception.ResultCastException;
-import cn.iheng.springboot.starter.utils.DefaultResultHandler;
+import cn.iheng.springboot.starter.reflect.DefaultResultHandler;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.ext.sql.ResultSet;
