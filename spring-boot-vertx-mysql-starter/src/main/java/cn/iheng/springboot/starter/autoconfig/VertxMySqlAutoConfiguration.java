@@ -1,6 +1,7 @@
 package cn.iheng.springboot.starter.autoconfig;
 
 import cn.iheng.springboot.starter.VertxDaoRegistrar;
+import cn.iheng.springboot.starter.VertxSqlClient;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.asyncsql.MySQLClient;
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.Import;
 @Import(VertxDaoRegistrar.class)
 @EnableConfigurationProperties(VertxMySqlProperties.class)
 public class VertxMySqlAutoConfiguration {
+
     @Bean
     @ConditionalOnMissingBean
     public Vertx vertx(){
@@ -28,9 +30,10 @@ public class VertxMySqlAutoConfiguration {
 
     @Bean
     @Qualifier("vertxMysqlClient")
-    public SQLClient sqlClient(Vertx vertx, VertxMySqlProperties sqlProperties) {
+    public VertxSqlClient vertxSqlClient(Vertx vertx, VertxMySqlProperties sqlProperties) {
         JsonObject config = JsonObject.mapFrom(sqlProperties);
         SQLClient client = MySQLClient.createShared(vertx, config);
-        return client;
+
+        return new VertxSqlClient(sqlProperties.getConfiguration(), client);
     }
 }

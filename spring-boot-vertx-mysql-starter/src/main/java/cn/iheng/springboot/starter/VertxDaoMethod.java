@@ -1,6 +1,7 @@
 package cn.iheng.springboot.starter;
 
 import cn.iheng.springboot.starter.annotation.*;
+import cn.iheng.springboot.starter.autoconfig.Configuration;
 import cn.iheng.springboot.starter.enums.SqlCommandType;
 import cn.iheng.springboot.starter.exception.ResultCastException;
 import cn.iheng.springboot.starter.reflect.DefaultResultHandler;
@@ -34,6 +35,10 @@ public class VertxDaoMethod<I, T> {
      * sql
      */
     private final String sql;
+    /**
+     * configuration
+     */
+    private Configuration configuration;
 
     public VertxDaoMethod(Class<I> interfaceType, Method method, Class<T> returnType) {
         this.interfaceType = interfaceType;

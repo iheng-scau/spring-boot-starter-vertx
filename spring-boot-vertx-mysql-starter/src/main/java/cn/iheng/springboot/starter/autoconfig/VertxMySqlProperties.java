@@ -1,6 +1,7 @@
 package cn.iheng.springboot.starter.autoconfig;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 /**
  * all the properties shown in this config class are default supported by vertx mysql client<br/>
@@ -52,6 +53,8 @@ public class VertxMySqlProperties {
      * Path to SSL root certificate file. Is used if you want to verify privately issued certificate.
      */
     private String sslRootCert;
+    @NestedConfigurationProperty
+    private Configuration configuration;
 
     public String getHost() {
         return host;
@@ -135,5 +138,13 @@ public class VertxMySqlProperties {
 
     public void setSslRootCert(String sslRootCert) {
         this.sslRootCert = sslRootCert;
+    }
+
+    public Configuration getConfiguration() {
+        return configuration;
+    }
+
+    public void setConfiguration(Configuration configuration) {
+        this.configuration = configuration;
     }
 }

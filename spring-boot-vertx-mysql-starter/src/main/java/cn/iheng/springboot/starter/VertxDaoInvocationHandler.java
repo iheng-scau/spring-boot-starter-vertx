@@ -1,5 +1,6 @@
 package cn.iheng.springboot.starter;
 
+import cn.iheng.springboot.starter.enums.SqlCommandType;
 import cn.iheng.springboot.starter.exception.MethodResolveException;
 import cn.iheng.springboot.starter.reflect.utils.MethodResolveUtils;
 import io.vertx.core.Future;
@@ -61,5 +62,9 @@ public class VertxDaoInvocationHandler<T> implements InvocationHandler, Serializ
             }
         }
         return Object.class;
+    }
+
+    private SqlCommandType resolveSqlCommandType(Method method){
+        return MethodResolveUtils.resolveSqlCommandType(method);
     }
 }
