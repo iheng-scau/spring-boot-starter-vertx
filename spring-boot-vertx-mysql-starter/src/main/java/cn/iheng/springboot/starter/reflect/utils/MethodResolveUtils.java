@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/6/18
  */
 public class MethodResolveUtils {

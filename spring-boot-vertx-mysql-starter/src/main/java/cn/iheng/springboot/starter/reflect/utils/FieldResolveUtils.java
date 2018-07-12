@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/9/18
  */
 public class FieldResolveUtils {

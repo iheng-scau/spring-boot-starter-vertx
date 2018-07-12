@@ -1,7 +1,7 @@
 package cn.iheng.springboot.starter.exception;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/6/18
  */
 public class MethodResolveException extends Exception{

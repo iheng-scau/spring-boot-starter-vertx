@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/4/18
  */
 public class DefaultResultHandler<T> implements ResultHandler {

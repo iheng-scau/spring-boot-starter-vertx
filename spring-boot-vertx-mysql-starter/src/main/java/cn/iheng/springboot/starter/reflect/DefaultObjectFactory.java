@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/6/18
  */
 public class DefaultObjectFactory<T> implements ObjectFactory {

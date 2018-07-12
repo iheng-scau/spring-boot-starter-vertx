@@ -3,7 +3,7 @@ package cn.iheng.springboot.starter.annotation;
 import cn.iheng.springboot.starter.enums.JdbcType;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/9/18
  */
 public @interface Result {

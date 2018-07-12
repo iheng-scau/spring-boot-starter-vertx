@@ -3,7 +3,7 @@ package cn.iheng.springboot.starter.reflect;
 import java.util.List;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/6/18
  */
 public interface ObjectFactory {

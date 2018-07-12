@@ -5,7 +5,7 @@ import io.vertx.ext.sql.ResultSet;
 import java.util.List;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/6/18
  */
 public interface ResultHandler{

@@ -34,6 +34,6 @@ public class VertxMySqlAutoConfiguration {
         JsonObject config = JsonObject.mapFrom(sqlProperties);
         SQLClient client = MySQLClient.createShared(vertx, config);
 
-        return new VertxSqlClient(sqlProperties.getConfiguration(), client);
+        return new VertxSqlClient(sqlProperties.)
     }
 }

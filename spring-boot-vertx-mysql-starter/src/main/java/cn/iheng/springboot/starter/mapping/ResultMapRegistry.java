@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * used to register result mappers defined in mapper interfaces
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/9/2018
  */
 public class ResultMapRegistry {

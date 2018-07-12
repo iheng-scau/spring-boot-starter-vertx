@@ -4,7 +4,7 @@ import cn.iheng.springboot.starter.autoconfig.Configuration;
 import io.vertx.ext.sql.SQLClient;
 
 /**
- * @author zhangdh@jpush.cn
+ * @author iheng_scau@hotmail.com
  * @date 7/10/18
  */
 public class VertxSqlClient {
