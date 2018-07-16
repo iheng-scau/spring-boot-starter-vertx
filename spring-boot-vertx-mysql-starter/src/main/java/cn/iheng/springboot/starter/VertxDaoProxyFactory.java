@@ -24,7 +24,7 @@ public class VertxDaoProxyFactory<T> {
         return this.interfaceType;
     }
 
-    public T newInstance(SQLClient client) {
+    public T newInstance(VertxSqlClient client) {
         InvocationHandler handler = new VertxDaoInvocationHandler<>(client, interfaceType, methodMap);
         return (T) Proxy.newProxyInstance(this.interfaceType.getClassLoader(), new Class[]{interfaceType}, handler);
     }

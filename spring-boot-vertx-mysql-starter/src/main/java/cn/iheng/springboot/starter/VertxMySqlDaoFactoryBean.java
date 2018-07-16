@@ -13,10 +13,11 @@ import org.springframework.context.ApplicationContextAware;
 public class VertxMySqlDaoFactoryBean<T> implements FactoryBean<T>, ApplicationContextAware{
     private Class<T> type;
     private ApplicationContext applicationContext;
+    private VertxSqlClient client;
 
     @Override
     public T getObject() throws Exception {
-        return new VertxDaoProxyFactory<>(type).newInstance(sqlClient());
+        return new VertxDaoProxyFactory<>(type).newInstance(this.client);
     }
 
     @Override
@@ -34,11 +35,11 @@ public class VertxMySqlDaoFactoryBean<T> implements FactoryBean<T>, ApplicationC
         this.applicationContext=applicationContext;
     }
 
-    private SQLClient sqlClient(){
-        return applicationContext.getBean(SQLClient.class);
-    }
-
     public void setType(Class<T> type) {
         this.type = type;
+    }
+
+    public void setClient(VertxSqlClient client) {
+        this.client = client;
     }
 }

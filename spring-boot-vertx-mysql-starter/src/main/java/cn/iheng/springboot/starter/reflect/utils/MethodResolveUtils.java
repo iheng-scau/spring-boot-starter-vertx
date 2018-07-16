@@ -1,5 +1,6 @@
 package cn.iheng.springboot.starter.reflect.utils;
 
+import cn.iheng.springboot.starter.SqlCommand;
 import cn.iheng.springboot.starter.annotation.Delete;
 import cn.iheng.springboot.starter.annotation.Insert;
 import cn.iheng.springboot.starter.annotation.Select;
@@ -48,27 +49,44 @@ public class MethodResolveUtils {
     }
 
     /**
-     *
+     * resolve the specified method to get sql and sqlCommandType
      * @param method
      * @return
      */
-    public static SqlCommandType resolveSqlCommandType(Method method){
+    public static SqlCommand resolveSqlCommandType(Method method){
+        // init sql and sqlCommandType
+        String sql="";
+        SqlCommandType sqlCommandType=SqlCommandType.UNKNOWN;
+
         for (Class type : sqlCommandTypeSet){
             Annotation annotation=method.getAnnotation(type);
             if(annotation !=null){
                 Class clazz=annotation.getClass();
-                if(clazz.isAssignableFrom(Select.class))
-                    return SqlCommandType.SELECT;
-                else if(clazz.isAssignableFrom(Insert.class))
-                    return SqlCommandType.INSERT;
-                else if(clazz.isAssignableFrom(Delete.class))
-                    return SqlCommandType.DELETE;
-                else if (clazz.isAssignableFrom(Update.class))
-                    return SqlCommandType.UPDATE;
-                else
-                    return SqlCommandType.UNKNOWN;
+                if(clazz.isAssignableFrom(Select.class)){
+                    sql=((Select)annotation).value();
+                    sqlCommandType=SqlCommandType.SELECT;
+                }
+                else if(clazz.isAssignableFrom(Insert.class)){
+                    sql=((Insert)annotation).value();
+                    sqlCommandType=SqlCommandType.INSERT;
+                }
+                else if(clazz.isAssignableFrom(Delete.class)){
+                    sql=((Delete)annotation).value();
+                    sqlCommandType=SqlCommandType.DELETE;
+                }
+                else if (clazz.isAssignableFrom(Update.class)){
+                    sql=((Update)annotation).value();
+                    sqlCommandType=SqlCommandType.UPDATE;
+                }
+                else{
+                    sql="";
+                    sqlCommandType=SqlCommandType.UNKNOWN;
+                }
             }
         }
-        return SqlCommandType.UNKNOWN;
+        return SqlCommand.builder()
+                .sql(sql)
+                .sqlCommandType(sqlCommandType)
+                .build();
     }
 }

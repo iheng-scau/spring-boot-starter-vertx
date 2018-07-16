@@ -1,8 +1,6 @@
 package cn.iheng.springboot.starter;
 
-import cn.iheng.springboot.starter.annotation.*;
 import cn.iheng.springboot.starter.autoconfig.Configuration;
-import cn.iheng.springboot.starter.enums.SqlCommandType;
 import cn.iheng.springboot.starter.exception.ResultCastException;
 import cn.iheng.springboot.starter.reflect.DefaultResultHandler;
 import io.vertx.core.Future;
@@ -12,8 +10,6 @@ import io.vertx.ext.sql.SQLClient;
 import io.vertx.ext.sql.SQLConnection;
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -28,46 +24,25 @@ public class VertxDaoMethod<I, T> {
      */
     private final Class<T> returnType;
     /**
-     * 查询类型
+     * sql command
      */
-    private final SqlCommandType type;
-    /**
-     * sql
-     */
-    private final String sql;
+    private final SqlCommand sqlCommand;
     /**
      * configuration
      */
     private Configuration configuration;
 
-    public VertxDaoMethod(Class<I> interfaceType, Method method, Class<T> returnType) {
+    /**
+     * parameterized constructor
+     *
+     * @param interfaceType
+     * @param sqlCommand
+     * @param returnType
+     */
+    public VertxDaoMethod(Class<I> interfaceType, SqlCommand sqlCommand, Class<T> returnType) {
         this.interfaceType = interfaceType;
         this.returnType = returnType;
-
-        Annotation[] annotations = method.getAnnotations();
-        if (annotations.length != 1) {
-            log.error("the method is not annotated with a proper annotation, please check the method:{}.{}", this.interfaceType.getName(), method.getName());
-        }
-        Class clazz = annotations[0].annotationType();
-        if (clazz.equals(Insert.class)) {
-            this.sql = ((Insert) annotations[0]).value();
-            this.type = SqlCommandType.INSERT;
-        } else if (clazz.equals(Delete.class)) {
-            this.sql = ((Delete) annotations[0]).value();
-            this.type = SqlCommandType.DELETE;
-        } else if (clazz.equals(Select.class)) {
-            this.sql = ((Select) annotations[0]).value();
-            this.type = SqlCommandType.SELECT;
-        } else if (clazz.equals(Update.class)) {
-            this.sql = ((Update) annotations[0]).value();
-            this.type = SqlCommandType.UPDATE;
-        } else if (clazz.equals(Call.class)) {
-            this.sql = ((Call) annotations[0]).value();
-            this.type = SqlCommandType.CALL;
-        } else {
-            this.sql = null;
-            type = SqlCommandType.UNKNOWN;
-        }
+        this.sqlCommand = sqlCommand;
     }
 
     public Future<Object> execute(SQLClient client, Object[] args) {
@@ -78,9 +53,14 @@ public class VertxDaoMethod<I, T> {
             for (Object param : args) {
                 params.add(param);
             }
-            switch (this.type) {
+
+            /**
+             * using conn to execute the query
+             * now supporting insert, delete, select, update
+             */
+            switch (this.sqlCommand.getSqlCommandType()) {
                 case INSERT:
-                    conn.queryWithParams(this.sql, params, result -> {
+                    conn.queryWithParams(this.sqlCommand.getSql(), params, result -> {
                         if (result.succeeded()) {
 
                         } else {
@@ -88,7 +68,7 @@ public class VertxDaoMethod<I, T> {
                         }
                     });
                 case DELETE:
-                    conn.updateWithParams(this.sql, params, result -> {
+                    conn.updateWithParams(this.sqlCommand.getSql(), params, result -> {
                         if (result.succeeded()) {
 
                         } else {
@@ -96,17 +76,17 @@ public class VertxDaoMethod<I, T> {
                         }
                     });
                 case SELECT:
-                    conn.queryWithParams(sql, params, result -> {
+                    conn.queryWithParams(this.sqlCommand.getSql(), params, result -> {
                         if (result.succeeded()) {
                             ResultSet resultSet = result.result();
                             if (resultSet.getRows() == null || resultSet.getRows().size() == 0) {
                                 future.tryComplete(null);
                             } else {
-                                if(isSingle()){
-                                    if(resultSet.getRows().size() > 1)
+                                if (isSingle()) {
+                                    if (resultSet.getRows().size() > 1)
                                         future.tryFail(new ResultCastException("the method expected to return a single item but several are found"));
                                     future.tryComplete(new DefaultResultHandler<>(returnType).handle(resultSet).get(0));
-                                }else{
+                                } else {
                                     future.tryComplete(new DefaultResultHandler<>(returnType).handle(resultSet));
                                 }
                             }
@@ -116,7 +96,7 @@ public class VertxDaoMethod<I, T> {
                         }
                     });
                 case UPDATE:
-                    conn.updateWithParams(this.sql, params, result -> {
+                    conn.updateWithParams(this.sqlCommand.getSql(), params, result -> {
                         if (result.succeeded()) {
 
                         } else {

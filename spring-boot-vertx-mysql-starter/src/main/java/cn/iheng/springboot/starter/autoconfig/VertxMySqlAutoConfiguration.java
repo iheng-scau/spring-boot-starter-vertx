@@ -30,10 +30,10 @@ public class VertxMySqlAutoConfiguration {
 
     @Bean
     @Qualifier("vertxMysqlClient")
+    @ConditionalOnMissingBean
     public VertxSqlClient vertxSqlClient(Vertx vertx, VertxMySqlProperties sqlProperties) {
         JsonObject config = JsonObject.mapFrom(sqlProperties);
         SQLClient client = MySQLClient.createShared(vertx, config);
-
-        return new VertxSqlClient(sqlProperties.)
+        return new VertxSqlClient(sqlProperties.getConfiguration(),client);
     }
 }
