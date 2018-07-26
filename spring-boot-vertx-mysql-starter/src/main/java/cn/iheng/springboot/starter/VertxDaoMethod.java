@@ -126,6 +126,11 @@ public class VertxDaoMethod<I, T> {
         return true;
     }
 
+    /**
+     *
+     * @param method
+     * @return
+     */
     private boolean hasResultMap(Method method){
         return method.isAnnotationPresent(Results.class);
     }
