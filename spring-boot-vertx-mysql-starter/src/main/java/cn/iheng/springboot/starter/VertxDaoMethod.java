@@ -127,7 +127,7 @@ public class VertxDaoMethod<I, T> {
     }
 
     /**
-     * return that
+     *
      * @param method
      * @return
      */
