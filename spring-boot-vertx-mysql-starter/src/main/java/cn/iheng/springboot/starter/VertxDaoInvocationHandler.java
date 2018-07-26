@@ -42,13 +42,12 @@ public class VertxDaoInvocationHandler<T> implements InvocationHandler, Serializ
 
     private VertxDaoMethod cachedVertxDaoMethod(Method method) throws MethodResolveException {
         if (methodMap.get(method) == null) {
-            methodMap.put(method, new VertxDaoMethod(this.interfaceType,resolveSqlCommand(method), (Class<?>) resolve(method)));
+            methodMap.put(method, new VertxDaoMethod(this.interfaceType, method, resolveSqlCommand(method), (Class<?>) resolve(method)));
         }
         return methodMap.get(method);
     }
 
     /**
-     *
      * @param method
      * @return
      * @throws MethodResolveException
@@ -69,11 +68,10 @@ public class VertxDaoInvocationHandler<T> implements InvocationHandler, Serializ
     }
 
     /**
-     *
      * @param method
      * @return
      */
-    private SqlCommand resolveSqlCommand(Method method){
+    private SqlCommand resolveSqlCommand(Method method) {
         return MethodResolveUtils.resolveSqlCommandType(method);
     }
 }

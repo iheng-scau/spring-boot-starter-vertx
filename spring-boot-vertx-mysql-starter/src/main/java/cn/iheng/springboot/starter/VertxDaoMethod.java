@@ -1,5 +1,6 @@
 package cn.iheng.springboot.starter;
 
+import cn.iheng.springboot.starter.annotation.Results;
 import cn.iheng.springboot.starter.autoconfig.Configuration;
 import cn.iheng.springboot.starter.exception.ResultCastException;
 import cn.iheng.springboot.starter.reflect.DefaultResultHandler;
@@ -10,6 +11,7 @@ import io.vertx.ext.sql.SQLClient;
 import io.vertx.ext.sql.SQLConnection;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -19,6 +21,10 @@ import java.util.List;
 @Slf4j
 public class VertxDaoMethod<I, T> {
     private final Class<I> interfaceType;
+    /**
+     * 原始方法
+     */
+    private final Method method;
     /**
      * 查询的实体类型
      */
@@ -39,8 +45,9 @@ public class VertxDaoMethod<I, T> {
      * @param sqlCommand
      * @param returnType
      */
-    public VertxDaoMethod(Class<I> interfaceType, SqlCommand sqlCommand, Class<T> returnType) {
+    public VertxDaoMethod(Class<I> interfaceType, Method method, SqlCommand sqlCommand, Class<T> returnType) {
         this.interfaceType = interfaceType;
+        this.method=method;
         this.returnType = returnType;
         this.sqlCommand = sqlCommand;
     }
@@ -117,5 +124,9 @@ public class VertxDaoMethod<I, T> {
         if (returnType.isAssignableFrom(List.class))
             return false;
         return true;
+    }
+
+    private boolean hasResultMap(Method method){
+        return method.isAnnotationPresent(Results.class);
     }
 }

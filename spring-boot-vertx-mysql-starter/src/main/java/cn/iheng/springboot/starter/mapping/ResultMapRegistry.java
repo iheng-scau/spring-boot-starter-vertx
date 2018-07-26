@@ -1,5 +1,8 @@
 package cn.iheng.springboot.starter.mapping;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -9,12 +12,18 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 7/9/2018
  */
 public class ResultMapRegistry {
-    final Map<String,ResultMap> registry=new ConcurrentHashMap<>();
+    final Map<String, ResultMapper> registry=new ConcurrentHashMap<>();
+
+    public void addResultMap(String id, ResultMapper mapper){
+        this.registry.put(id, mapper);
+    }
 
     /**
      * class to hold result map definition
      */
-    public static class ResultMap{
+    @Data
+    @Builder
+    public static class ResultMapper {
         Map<String,String> mapper;
 
         public Map<String, String> getMapper() {
