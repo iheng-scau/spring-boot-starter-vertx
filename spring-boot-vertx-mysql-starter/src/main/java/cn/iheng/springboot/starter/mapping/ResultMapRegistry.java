@@ -8,14 +8,19 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * used to register result mappers defined in mapper interfaces
+ *
  * @author iheng_scau@hotmail.com
  * @date 7/9/2018
  */
 public class ResultMapRegistry {
-    final Map<String, ResultMapper> registry=new ConcurrentHashMap<>();
+    final Map<String, ResultMapper> registry = new ConcurrentHashMap<>();
 
-    public void addResultMap(String id, ResultMapper mapper){
+    public void addResultMap(String id, ResultMapper mapper) {
         this.registry.put(id, mapper);
+    }
+
+    public ResultMapper getResultMapper(String id) {
+        return registry.get(id);
     }
 
     /**
@@ -24,7 +29,7 @@ public class ResultMapRegistry {
     @Data
     @Builder
     public static class ResultMapper {
-        Map<String,String> mapper;
+        Map<String, String> mapper;
 
         public Map<String, String> getMapper() {
             return mapper;
