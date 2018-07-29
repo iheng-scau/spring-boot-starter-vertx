@@ -130,7 +130,7 @@ public class VertxDaoMethod<I, T> {
 
     /**
      * 判断指定方法是否被@Results注解
-     * @param method
+     * @param
      * @return
      */
     public boolean hasResultMap() {
