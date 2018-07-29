@@ -1,6 +1,6 @@
 language: java
 script:
   - mvn cobertura:cobertura
-  - mvn clean install -Dmaven.test.skip=true
+  - mvn clean package -Dmaven.test.skip
 after_success:
   - bash <(curl -s https://codecov.io/bash)

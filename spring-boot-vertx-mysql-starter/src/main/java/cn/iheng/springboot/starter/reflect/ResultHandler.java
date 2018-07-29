@@ -9,5 +9,5 @@ import java.util.List;
  * @date 7/6/18
  */
 public interface ResultHandler{
-    List<Object> handle(ResultSet resultSet);
+    <T> List<Object> handle(ResultSet resultSet);
 }

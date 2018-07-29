@@ -87,6 +87,7 @@ public class MethodResolveUtils {
     }
 
     /**
+     * 对指定接口的方法进行分析,并将方法注解的@Results信息注册到Configuration中用于全局使用
      * @param clazz
      * @return
      */

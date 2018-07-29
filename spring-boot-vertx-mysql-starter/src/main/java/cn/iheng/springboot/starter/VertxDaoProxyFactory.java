@@ -1,7 +1,5 @@
 package cn.iheng.springboot.starter;
 
-import cn.iheng.springboot.starter.reflect.utils.MethodResolveUtils;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -25,7 +23,6 @@ public class VertxDaoProxyFactory<T> {
     }
 
     public T newInstance(VertxSqlClient client) {
-        MethodResolveUtils.resolveResultMap(interfaceType, client.getConfiguration());
         InvocationHandler handler = new VertxDaoInvocationHandler<>(client, interfaceType, methodMap);
         return (T) Proxy.newProxyInstance(this.interfaceType.getClassLoader(), new Class[]{interfaceType}, handler);
     }

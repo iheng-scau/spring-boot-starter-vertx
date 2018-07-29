@@ -9,6 +9,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.ext.sql.ResultSet;
 import io.vertx.ext.sql.SQLClient;
 import io.vertx.ext.sql.SQLConnection;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
@@ -19,6 +20,7 @@ import java.util.List;
  * @date 1/29/18
  */
 @Slf4j
+@Data
 public class VertxDaoMethod<I, T> {
     private final Class<I> interfaceType;
     /**
@@ -47,7 +49,7 @@ public class VertxDaoMethod<I, T> {
      */
     public VertxDaoMethod(Class<I> interfaceType, Method method, SqlCommand sqlCommand, Class<T> returnType) {
         this.interfaceType = interfaceType;
-        this.method=method;
+        this.method = method;
         this.returnType = returnType;
         this.sqlCommand = sqlCommand;
     }
@@ -92,9 +94,9 @@ public class VertxDaoMethod<I, T> {
                                 if (isSingle()) {
                                     if (resultSet.getRows().size() > 1)
                                         future.tryFail(new ResultCastException("the method expected to return a single item but several are found"));
-                                    future.tryComplete(new DefaultResultHandler<>(returnType).handle(resultSet).get(0));
+                                    future.tryComplete(new DefaultResultHandler(this).handle(resultSet).get(0));
                                 } else {
-                                    future.tryComplete(new DefaultResultHandler<>(returnType).handle(resultSet));
+                                    future.tryComplete(new DefaultResultHandler(this).handle(resultSet));
                                 }
                             }
                         } else {
@@ -131,7 +133,7 @@ public class VertxDaoMethod<I, T> {
      * @param method
      * @return
      */
-    private boolean hasResultMap(Method method){
-        return method.isAnnotationPresent(Results.class);
+    public boolean hasResultMap() {
+        return this.getMethod().isAnnotationPresent(Results.class);
     }
 }
