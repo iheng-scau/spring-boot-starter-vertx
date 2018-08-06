@@ -9,5 +9,5 @@ import lombok.Data;
  */
 @Data
 public class Configuration {
-    private final ResultMapRegistry resultMapRegistry=new ResultMapRegistry();
+    private final ResultMapRegistry resultMapRegistry = new ResultMapRegistry();
 }

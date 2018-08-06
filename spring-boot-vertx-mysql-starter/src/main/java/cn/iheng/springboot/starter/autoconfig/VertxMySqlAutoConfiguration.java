@@ -2,11 +2,12 @@ package cn.iheng.springboot.starter.autoconfig;
 
 import cn.iheng.springboot.starter.VertxDaoRegistrar;
 import cn.iheng.springboot.starter.VertxSqlClient;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import io.vertx.core.Vertx;
+import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.asyncsql.MySQLClient;
 import io.vertx.ext.sql.SQLClient;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -28,10 +29,10 @@ public class VertxMySqlAutoConfiguration {
         return Vertx.vertx();
     }
 
-    @Bean
-    @Qualifier("vertxMysqlClient")
+    @Bean("vertxSqlClient")
     @ConditionalOnMissingBean
     public VertxSqlClient vertxSqlClient(Vertx vertx, VertxMySqlProperties sqlProperties) {
+        Json.mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
         JsonObject config = JsonObject.mapFrom(sqlProperties);
         SQLClient client = MySQLClient.createShared(vertx, config);
         return new VertxSqlClient(sqlProperties.getConfiguration(),client);

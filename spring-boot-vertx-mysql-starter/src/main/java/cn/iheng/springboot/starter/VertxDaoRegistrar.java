@@ -7,6 +7,7 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
+import org.springframework.beans.factory.config.RuntimeBeanReference;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
@@ -75,6 +76,7 @@ public class VertxDaoRegistrar implements BeanFactoryAware, ImportBeanDefinition
         BeanDefinitionBuilder definition = BeanDefinitionBuilder
                 .genericBeanDefinition(VertxMySqlDaoFactoryBean.class);
         definition.addPropertyValue("type", className);
+        definition.addPropertyValue("client", new RuntimeBeanReference("vertxSqlClient"));
         definition.setAutowireMode(AbstractBeanDefinition.AUTOWIRE_BY_TYPE);
         AbstractBeanDefinition beanDefinition = definition.getBeanDefinition();
         beanDefinition.setPrimary(true);

@@ -53,8 +53,9 @@ public class VertxMySqlProperties {
      * Path to SSL root certificate file. Is used if you want to verify privately issued certificate.
      */
     private String sslRootCert;
+
     @NestedConfigurationProperty
-    private Configuration configuration;
+    private Configuration configuration = new Configuration();
 
     public String getHost() {
         return host;
